@@ -1,0 +1,102 @@
+Anish Bhat
+Hubballi, Karnataka, India
++91 6362253632 | bhata744@gmail.com
+linkedin.com/in/anishbhat00 | github.com/Cobot69
+PROFESSIONAL SUMMARY
+AI/ML Engineer and backend developer with hands-on experience designing scalable backend systems, API-driven architectures,
+and production-grade ML pipelines for computer vision, NLP, and agentic AI applications. Proficient in Python, OOP, and clean
+code practices with a strong emphasis on writing test cases, debugging production issues, and maintaining reliable version
+control workflows via GitHub. Proven track record of shipping end-to-end systems—from architecture design through testing
+and deployment—with measurable impact on performance, reliability, and business outcomes.
+EDUCATION
+KLE Technological University Hubballi, Karnataka
+Bachelor of Engineering in Computer Science (Artificial Intelligence) 2022–2026
+GPA: 7.63/10
+Expert PU College Mangaluru, Karnataka
+Pre-University (PCMB) 2020–2022
+Score: 93.16%
+TECHNICAL SKILLS
+Languages: Python, C++
+Engineering Fundamentals: Object-Oriented Programming (OOP), Data Structures & Algorithms (DSA), Clean Code Princi￾ples, Unit Testing & Test Case Design, Debugging & Root Cause Analysis, Version Control Workflows (Git, GitHub branching,
+PRs, code review)
+Machine Learning & AI: Machine Learning, Deep Learning, Artificial Intelligence, Supervised Learning, Unsupervised Learn￾ing, Model Training, Model Evaluation, Hyperparameter Tuning, Cross Validation, Feature Engineering, Data Preprocessing,
+Experimentation, Model Optimization
+Specialized Areas: Computer Vision, Natural Language Processing (NLP), Generative AI, Large Language Models (LLMs),
+Transformers, Retrieval-Augmented Generation (RAG), Multimodal AI, Agentic Systems, Multi-Agent Orchestration, Voice AI,
+Conversational AI
+Frameworks & Libraries: PyTorch, TensorFlow, HuggingFace Transformers, OpenCV, NumPy, Pandas, LangChain, n8n, Vapi,
+Twilio
+Web & Backend: Next.js, FastAPI, Flask, REST API Design, API-Driven Architecture, Event-Driven Architecture, Webhook
+Orchestration
+Data & Databases: SQL, PostgreSQL, MongoDB, Pinecone Vector Database, Firebase, Supabase, Data Analysis, Statistics,
+Probability
+Deployment & MLOps: Docker, Git, GitHub, Vercel, CI/CD Pipelines, Model Deployment, Cloud Computing (GCP,Lightning
+Ai-compatible), TensorFlow Lite, Edge Deployment
+Model Optimization: INT8 Quantization, Structured & Unstructured Pruning, Model Compression, Efficient Inference
+EXPERIENCE
+Decibels Lab Bengaluru, India
+Embedded AI Intern February 2025–April 2025
+• Trained and evaluated YOLOv11 object detection models on KITTI dataset using statistical metrics and validation techniques,
+achieving over 65% model size reduction through structured pruning and INT8 quantization
+• Performed data preprocessing and feature engineering on autonomous driving datasets to improve detection accuracy across
+Raspberry Pi and Jetson Nano edge devices
+• Built a scalable backend ML pipeline integrating real-time object detection, lane detection, and sensor fusion with end-to￾end latency of approximately 210ms; debugged latency bottlenecks and sensor sync failures to meet production performance
+targets
+• Deployed optimized deep learning models on embedded hardware, implementing REST APIs for telemetry and system
+monitoring; managed codebase on GitHub with clean branching and documented commit history
+RESEARCH & PUBLICATIONS
+Multimodal Document Intelligence ICCIS 2025
+Published peer-reviewed research on quantized multimodal systems for scientific document understanding
+Embedded AI Systems CIS 2025
+Published peer-reviewed research on edge deployment and optimization techniques for embedded AI
+Model Optimization Techniques SPIN 2025
+Published peer-reviewed research on neural network compression and quantization methods
+PROJECTS
+Svarra – Multi-Agent AI Voice Automation Platform February 2026–April 2026
+Python, Next.js, FastAPI, PostgreSQL, Supabase, Vapi, Twilio, n8n, GitHub, Vercel
+• Built a scalable backend system (Python/FastAPI) with clean OOP architecture, exposing modular REST APIs for 4 special￾ized agents (conversation, lead qualification, appointment booking, follow-up) for autonomous inbound/outbound voice call
+handling at scale
+• Implemented event-driven workflows via n8n and idempotent webhook handling for CRM updates, calendar bookings, and
+retry logic; designed PostgreSQL schema on Supabase for centralized shared state and data consistency across all agents
+• Designed an API-driven architecture integrating Vapi (voice agents) and Twilio (telephony) with clearly defined service
+interfaces, enabling independent testing of each subsystem, clean separation of concerns, and straightforward debugging
+• Wrote test cases for webhook handlers, agent state transitions, and API endpoints; debugged race conditions in concurrent
+call handling and idempotency failures; applied DSA principles to optimize call routing for low-latency decision-making
+under load
+• Delivered a real-time analytics dashboard (Next.js + Supabase Realtime) tracking call duration, cost, and conversion rates;
+managed version control on GitHub (feature branches, PRs, code review) and deployed frontend and backend to Vercel;
+enabled multi-lingual voice interactions for the Indian market
+Agentic RAG Medical Data Extraction Pipeline
+Python, LangChain, FastAPI, Docker, Pinecone, n8n, HuggingFace Embeddings, PostgreSQL, GitHub
+• Designed a containerized RAG pipeline in Python (clean OOP) combining HuggingFace embeddings and Pinecone vector
+database for high-accuracy semantic retrieval over unstructured medical PDFs
+• Built an agentic LangChain orchestration layer coordinating ingestion, chunking, embedding, retrieval, and answer synthesis
+via a modular API-driven architecture, with FastAPI endpoints for real-time QA and batch summarization
+• Implemented Docker microservice deployment with n8n orchestration; wrote test cases for retrieval accuracy and API re￾sponses, debugged chunking/embedding failures, and used PostgreSQL for metadata storage and production issue diagnosis
+• Maintained full version control on GitHub with structured branching and commit conventions across all pipeline components
+YOLO-OptiMob: Edge AI Optimization Pipeline
+PyTorch, TensorFlow Lite, YOLOv8, Python, L1 Pruning, INT8 Quantization
+• Built an end-to-end ML optimization pipeline for deploying YOLO models on mobile and edge devices, applying L1 struc￾tured pruning and INT8 quantization to reduce model size from 11.4MB to 2.5MB (78% reduction) while maintaining infer￾ence accuracy
+• Converted optimized models to TensorFlow Lite format for Android deployment, achieving efficient real-time inference with
+minimal latency on resource-constrained hardware
+Embedded ADAS System
+Python, TensorFlow Lite, OpenCV, Flask, Raspberry Pi, Sensor Fusion
+• Developed a full-stack Advanced Driver Assistance System combining computer vision, sensor data, and motor control on
+embedded hardware, deploying quantized deep learning models achieving real-time inference on Raspberry Pi
+• Integrated a Flask API dashboard for live system monitoring and telemetry, enabling remote observability of all ADAS
+subsystems
+Vision-Language Scene Understanding
+PyTorch, BLIP, YOLOv8, HuggingFace Transformers, Python
+• Implemented BLIP-based vision-language models for generating structured scene descriptions from visual input, integrating
+object detection and tracking algorithms with LLM reasoning to achieve 82% accuracy through iterative model training and
+validation
+Stock Analysis & Auto-Trading Agent System
+LangChain, Gemini LLMs, Python, REST APIs, Data Visualization
+• Developed a multi-agent system using LangChain and Gemini LLMs for time series analysis, financial trend prediction, and
+automated trading signals, with connected APIs and analytical dashboards for data visualization and decision support
+CERTIFICATIONS
+NVIDIA: Getting Started with AI on Jetson Nano (2026)
+Neo4j: Neo4j Certified Professional: Graph Data Science (2026); Building Knowledge Graphs with LLMs (2026)
+HONORS & AWARDS
+1st Place, College Mechatronics Competition (130+ teams)
+Hackathon Finalist & Team Lead, Smart India Hackathon and HackKarnataka
