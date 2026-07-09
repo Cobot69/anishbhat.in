@@ -1,0 +1,196 @@
+You are building a premium cinematic AI Engineer portfolio for Anish Bhat.
+
+This is NOT a normal portfolio website. It is a scroll-driven cinematic product experience inspired by Apple, Stripe, and modern AI startups.
+
+You must build FULL STACK application (frontend + backend + admin + firebase integration) and I will only provide API keys later in .env.local.
+
+---
+
+# PROJECT ROOT INPUT ASSETS (DO NOT CHANGE PATHS)
+
+You are given these existing folders in project root:
+
+1.
+D:\KYMOS\portfolioAnish\ezgif-686b020de58bd4b5-png-split
+→ THIS IS HERO SECTION ANIMATION
+→ Contains first cinematic text animation:
+   "Building the Future with AI"
+
+2.
+D:\KYMOS\portfolioAnish\ezgif-6174f8fc9f3bd694-png-split
+→ THIS IS INTRO SECTION ANIMATION
+→ Contains:
+   "Hi, I'm Anish Bhat"
+   + right side portrait reveal animation frames
+
+3.
+portfolio.png
+→ Background reference image (use as optional texture/blur layer only)
+
+4.
+resume.txt
+→ SINGLE SOURCE OF TRUTH for:
+   About
+   Experience
+   Projects
+   Skills
+   Education
+
+5.
+architecture.md
+6.
+requirements.md
+7.
+documentation.md
+
+---
+
+# CRITICAL RULES
+
+- DO NOT rename or restructure frame folders
+- DO NOT generate fake animation assets
+- MUST use existing folders exactly as-is
+- All scroll animations must be derived from frame sequences in those folders
+- No autoplay animations (scroll-controlled only)
+
+---
+
+# TECH STACK (MANDATORY)
+
+- Next.js (App Router)
+- TypeScript
+- TailwindCSS
+- GSAP ScrollTrigger (for scroll animation system)
+- Framer Motion (UI transitions only)
+- Firebase (Auth + Firestore + Storage)
+- Vercel deployment ready
+
+---
+
+# ANIMATION SYSTEM
+
+You must build a FRAME SCRUBBING SYSTEM:
+
+Section 1 (HERO)
+- Uses folder:
+  ezgif-686b020de58bd4b5-png-split
+- Scroll controls frame progression
+- Cinematic reveal of:
+  "Building the Future with AI"
+
+Section 2 (INTRO / IDENTITY)
+- Uses folder:
+  ezgif-6174f8fc9f3bd694-png-split
+- Scroll controlled frames:
+  "Hi, I'm Anish Bhat"
+  + portrait reveal on right side
+
+IMPORTANT:
+Each section must independently control its own frame sequence.
+No mixing between folders.
+
+---
+
+# WEBSITE STRUCTURE
+
+1. HERO (Frame Animation Section 1)
+2. INTRO / IDENTITY (Frame Animation Section 2)
+3. ABOUT (from resume.txt)
+4. EXPERIENCE (from resume.txt + Firebase editable)
+5. PROJECTS (card-based + admin controlled)
+6. SKILLS (structured from resume.txt)
+7. BLOG (Firebase CMS)
+8. CONNECT (social links + form)
+9. FOOTER
+
+---
+
+# ADMIN PANEL (MANDATORY)
+
+Create /admin dashboard with:
+
+- Login (Firebase Auth)
+- Projects CRUD
+- Experience CRUD
+- Blog CRUD
+- Resume update system
+- Image upload system (Firebase Storage)
+- Social links editor
+
+---
+
+# FIREBASE SETUP
+
+You must implement but NOT hardcode keys.
+
+Use:
+
+.env.local placeholders:
+
+NEXT_PUBLIC_FIREBASE_API_KEY=
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+NEXT_PUBLIC_FIREBASE_APP_ID=
+
+---
+
+# DESIGN SYSTEM
+
+Theme:
+- Deep black
+- Warm brown accents
+- Soft white typography
+
+Style:
+- Cinematic
+- Minimal
+- Apple-like product page feel
+- No neon, no cyberpunk, no generic AI visuals
+
+---
+
+# PERFORMANCE REQUIREMENTS
+
+- Lazy load frames
+- Preload only visible section frames
+- Use requestAnimationFrame for scroll syncing
+- Optimize images (WebP optional later)
+- Mobile responsive
+
+---
+
+# OUTPUT REQUIREMENTS
+
+After building:
+
+1. Fully working frontend
+2. Fully working admin panel
+3. Firebase integrated backend
+4. Scroll animation system working
+5. Clean reusable components
+
+---
+
+# FINAL IMPORTANT STEP
+
+After completing project, create:
+
+instructions.md
+
+This file must include:
+
+- How to set up Firebase step-by-step
+- Where to get API keys
+- How to configure .env.local
+- How to run project locally
+- How to deploy to Vercel
+- How to add new projects/blogs/experience via admin
+- How frame animation system works internally
+
+This file must be beginner-friendly and extremely detailed.
+
+---
+
+Now build the entire system step by step. Start with frontend architecture first.

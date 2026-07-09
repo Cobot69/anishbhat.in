@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #FAFAFA;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-brand-black text-brand-light font-sans antialiased overflow-x-hidden;
+  }
+  
+  ::selection {
+    @apply bg-brand-brown/50 text-white;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)];
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-light to-brand-brown;
+  }
+  
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 950px) {
+  /* Ensure horizontal panels can scroll vertically on mobile if content is too tall */
+  .horizontal-panel {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Fix flexbox centering bug which cuts off the top of tall content on mobile */
+  .horizontal-panel > section,
+  .project-panel {
+    justify-content: flex-start !important;
+    padding-top: 120px !important;
+    padding-bottom: 120px !important;
+  }
+
+  /* Provide a slight zoom-out effect for all panel content on mobile as requested */
+  .horizontal-panel > section > div,
+  .project-panel > .project-content {
+    transform: scale(0.9);
+    transform-origin: top center;
+    margin-bottom: 100px;
+  }
+}
+

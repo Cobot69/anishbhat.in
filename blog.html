@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Anish Bhat</title>
+  <meta name="description" content="Thoughts on AI, engineering, ethics, and building systems that matter — by Anish Bhat." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    /* Blog page specific styles */
+    .blog-page { background: var(--bg-cream); min-height: 100vh; padding-top: 120px; }
+    .blog-page__header {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--section-pad-x) 60px;
+    }
+    .blog-page__back {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 600; color: var(--accent-charcoal);
+      margin-bottom: 32px; letter-spacing: 0.03em;
+      transition: gap 0.3s var(--ease-out);
+    }
+    .blog-page__back:hover { gap: 12px; opacity: 1; }
+    .blog-page__title {
+      font-family: var(--font-serif);
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 700; color: var(--text-dark); margin-bottom: 12px;
+    }
+    .blog-page__subtitle {
+      font-size: 16px; color: #888; max-width: 560px; line-height: 1.7;
+    }
+    .blog-page__list {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--section-pad-x) var(--section-pad-y);
+      display: flex; flex-direction: column; gap: 28px;
+    }
+    .blog-entry {
+      background: rgba(255,255,255,0.45);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: clamp(28px, 3vw, 44px);
+      transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out);
+    }
+    .blog-entry:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.06);
+    }
+    .blog-entry__meta {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 16px; flex-wrap: wrap;
+    }
+    .blog-entry__tag {
+      padding: 4px 14px; font-size: 11px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--accent-charcoal); background: rgba(30,30,34,0.06);
+      border-radius: 100px;
+    }
+    .blog-entry__date { font-size: 12px; color: #aaa; }
+    .blog-entry__title {
+      font-family: var(--font-body);
+      font-size: clamp(20px, 2vw, 28px);
+      font-weight: 700; color: var(--text-dark);
+      line-height: 1.35; margin-bottom: 16px;
+    }
+    .blog-entry__body {
+      max-height: 0; overflow: hidden; opacity: 0;
+      transition: max-height 0.6s var(--ease-out), opacity 0.6s var(--ease-out), margin 0.6s;
+    }
+    .blog-entry.expanded .blog-entry__body {
+      max-height: 2000px; opacity: 1; margin-top: 8px;
+    }
+    .blog-entry__body p {
+      font-size: 15px; line-height: 1.8; color: #444; margin-bottom: 16px;
+    }
+    .blog-entry__body h4 {
+      font-size: 17px; font-weight: 700; color: var(--text-dark);
+      margin: 24px 0 10px;
+    }
+    .blog-entry__excerpt {
+      font-size: 14px; line-height: 1.7; color: #666; margin-bottom: 16px;
+    }
+    .blog-entry__toggle {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 600; color: var(--accent-charcoal);
+      padding: 8px 20px; border: 1.5px solid var(--border-light);
+      border-radius: 100px; transition: all 0.35s var(--ease-out);
+      cursor: pointer; background: none; font-family: var(--font-body);
+    }
+    .blog-entry__toggle:hover {
+      background: var(--accent-charcoal); color: var(--text-light);
+      border-color: var(--accent-charcoal);
+    }
+    .blog-entry__toggle svg {
+      transition: transform 0.4s var(--ease-out);
+    }
+    .blog-entry.expanded .blog-entry__toggle svg { transform: rotate(180deg); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav nav--scrolled" aria-label="Primary">
+    <div class="nav__inner">
+      <ul class="nav__links">
+        <li><a href="./index.html#about">About</a></li>
+        <li><a href="./index.html#skills">Skills</a></li>
+        <li><a href="./index.html#projects">Projects</a></li>
+        <li><a href="./index.html#journey">Journey</a></li>
+        <li><a href="./index.html#research">Research</a></li>
+        <li><a href="./index.html#myself">Myself</a></li>
+        <li><a href="./blog.html" class="active">Blog</a></li>
+        <li><a href="./index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="blog-page">
+    <header class="blog-page__header">
+      <a href="./index.html" class="blog-page__back">← Back to Portfolio</a>
+      <h1 class="blog-page__title">Blog</h1>
+      <p class="blog-page__subtitle">Thoughts on AI, engineering, responsibility, and building systems that actually matter in the real world.</p>
+    </header>
+
+    <div class="blog-page__list">
+
+      <!-- Blog 1 -->
+      <article class="blog-entry" data-blog-expandable>
+        <div class="blog-entry__meta">
+          <span class="blog-entry__tag">AI Agents</span>
+          <span class="blog-entry__date">June 2025</span>
+        </div>
+        <h2 class="blog-entry__title">The Real-World Impact of AI Agents in Enterprise</h2>
+        <p class="blog-entry__excerpt">How autonomous AI agents are transforming customer service, sales pipelines, and operational workflows — moving beyond chatbots into systems that think, plan, and execute.</p>
+        <div class="blog-entry__body">
+          <p>For years, "AI in business" meant chatbots that could barely handle a FAQ. But the landscape has fundamentally shifted. We're now building autonomous agents that don't just respond — they reason, plan multi-step actions, and execute against real business APIs.</p>
+          <h4>What Changed?</h4>
+          <p>The emergence of large language models with tool-use capabilities created a paradigm shift. Instead of hard-coded decision trees, agents now dynamically decide which tools to call, how to sequence actions, and when to escalate to humans. This is the difference between a chatbot and a colleague.</p>
+          <h4>Real Impact Numbers</h4>
+          <p>In our deployment at Svarra, autonomous voice agents handled 78% of inbound calls without human intervention. Lead qualification accuracy improved by 40%, and appointment booking completion rates doubled. These aren't lab numbers — they're production metrics from real Indian market deployments handling multi-lingual conversations.</p>
+          <p>The future isn't about replacing humans. It's about building AI systems that handle the 80% of repetitive work, freeing humans to do what they do best — build relationships, make judgment calls, and create strategy.</p>
+        </div>
+        <button class="blog-entry__toggle" aria-label="Expand">
+          <span>Read full article</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+      </article>
+
+      <!-- Blog 2 -->
+      <article class="blog-entry" data-blog-expandable>
+        <div class="blog-entry__meta">
+          <span class="blog-entry__tag">Responsible AI</span>
+          <span class="blog-entry__date">April 2025</span>
+        </div>
+        <h2 class="blog-entry__title">Building Responsible AI: Ethics in Production Systems</h2>
+        <p class="blog-entry__excerpt">Deploying AI at scale demands more than accuracy. Fairness, transparency, and accountability must be engineered into every layer — from data pipelines to model outputs.</p>
+        <div class="blog-entry__body">
+          <p>There's a dangerous assumption in the AI industry: that if a model performs well on benchmarks, it's ready for production. This couldn't be more wrong. Production AI operates in messy, biased, high-stakes environments where a single unfair prediction can affect someone's life.</p>
+          <h4>Ethics as Engineering</h4>
+          <p>Responsible AI isn't a checkbox — it's an engineering discipline. It means building bias detection into your CI/CD pipeline. It means implementing model cards that document limitations. It means creating feedback loops that catch when your model drifts into harmful territory.</p>
+          <h4>Practical Steps</h4>
+          <p>In every system I build, I implement three non-negotiables: source attribution (so users know where answers come from), confidence calibration (so the system knows when it doesn't know), and human escalation paths (so there's always a safety net). These aren't nice-to-haves — they're the foundation of AI you can actually trust.</p>
+        </div>
+        <button class="blog-entry__toggle" aria-label="Expand">
+          <span>Read full article</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+      </article>
+
+      <!-- Blog 3 -->
+      <article class="blog-entry" data-blog-expandable>
+        <div class="blog-entry__meta">
+          <span class="blog-entry__tag">Engineering</span>
+          <span class="blog-entry__date">February 2025</span>
+        </div>
+        <h2 class="blog-entry__title">From Research to Deployment: Bridging the AI Gap</h2>
+        <p class="blog-entry__excerpt">Most ML models never make it to production. Here's a practical framework for turning research prototypes into reliable, scalable, and maintainable AI products.</p>
+        <div class="blog-entry__body">
+          <p>The "last mile" problem in AI isn't about model accuracy — it's about everything that surrounds the model. Data pipelines, monitoring, versioning, latency optimization, error handling, graceful degradation. The model is 10% of the work; the system is the other 90%.</p>
+          <h4>The Framework</h4>
+          <p>I've developed a five-stage pipeline for taking ML research to production: (1) Reproduce the paper's results, (2) Stress-test with adversarial inputs, (3) Optimize for latency and cost, (4) Build the monitoring and observability layer, (5) Ship with feature flags and canary deployments.</p>
+          <h4>Why Most Projects Fail</h4>
+          <p>They skip stages 2 through 4. They go from "it works on my notebook" straight to "let's deploy." Then they're surprised when the model hallucinates in production, the inference costs blow up, and there's no way to know when things go wrong. The bridge between research and production is built with boring, unglamorous engineering — and that's exactly why it's so valuable.</p>
+        </div>
+        <button class="blog-entry__toggle" aria-label="Expand">
+          <span>Read full article</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+      </article>
+
+      <!-- Blog 4 -->
+      <article class="blog-entry" data-blog-expandable>
+        <div class="blog-entry__meta">
+          <span class="blog-entry__tag">Multi-Agent</span>
+          <span class="blog-entry__date">December 2024</span>
+        </div>
+        <h2 class="blog-entry__title">Why Multi-Agent Systems Are the Future of Automation</h2>
+        <p class="blog-entry__excerpt">Single monolithic AI models have their limits. The future belongs to orchestrated teams of specialized agents that collaborate, delegate, and self-correct.</p>
+        <div class="blog-entry__body">
+          <p>Think about how a hospital works. You don't have one doctor doing everything — you have specialists who collaborate. A radiologist reads the scan, an oncologist interprets the findings, a surgeon plans the procedure. Each expert focuses on what they do best.</p>
+          <h4>AI Should Work the Same Way</h4>
+          <p>Multi-agent systems follow this principle. Instead of one giant model trying to do everything (and doing nothing particularly well), you orchestrate multiple specialized agents. One handles natural language understanding, another manages API calls, a third handles validation and error recovery.</p>
+          <p>In our voice automation platform, we used 4 specialized agents: a conversation manager, a CRM agent, a calendar agent, and a quality assurance agent. Each was tuned for its specific domain. The result? 3x throughput improvement and dramatically fewer errors compared to a single-agent approach. The future of AI isn't bigger models — it's smarter architectures.</p>
+        </div>
+        <button class="blog-entry__toggle" aria-label="Expand">
+          <span>Read full article</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+      </article>
+
+      <!-- Blog 5 -->
+      <article class="blog-entry" data-blog-expandable>
+        <div class="blog-entry__meta">
+          <span class="blog-entry__tag">Prompt Engineering</span>
+          <span class="blog-entry__date">October 2024</span>
+        </div>
+        <h2 class="blog-entry__title">The Art of Prompt Engineering: Beyond Basic Prompts</h2>
+        <p class="blog-entry__excerpt">Prompt engineering is the new programming. Master the art of communicating with AI systems and unlock capabilities most people never discover.</p>
+        <div class="blog-entry__body">
+          <p>Everyone can write a basic prompt. But the gap between a basic prompt and a production-grade prompt template is like the gap between "Hello World" and a distributed system. Production prompts need to handle edge cases, maintain consistency, include guardrails, and degrade gracefully.</p>
+          <h4>Advanced Techniques</h4>
+          <p>Chain-of-thought prompting, few-shot examples with adversarial cases, structured output enforcement, dynamic context window management — these are the tools of the trade. But the real skill isn't knowing the techniques. It's knowing which technique to apply when, and how to evaluate whether your prompt actually works in the wild.</p>
+          <p>The best prompt engineers I know are also the best debuggers. They think about failure modes first, then work backwards to prevent them. They version-control their prompts like code. They A/B test prompt variations with real users. This discipline is what separates hobby projects from production systems.</p>
+        </div>
+        <button class="blog-entry__toggle" aria-label="Expand">
+          <span>Read full article</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+      </article>
+
+      <!-- Blog 6 -->
+      <article class="blog-entry" data-blog-expandable>
+        <div class="blog-entry__meta">
+          <span class="blog-entry__tag">RAG Systems</span>
+          <span class="blog-entry__date">August 2024</span>
+        </div>
+        <h2 class="blog-entry__title">RAG Systems: Making AI Actually Useful for Business</h2>
+        <p class="blog-entry__excerpt">Retrieval-Augmented Generation bridges the gap between general AI and domain-specific expertise. Here's how to build RAG that doesn't hallucinate.</p>
+        <div class="blog-entry__body">
+          <p>The dirty secret of LLMs is that they make things up. Confidently. Eloquently. And completely incorrectly. For business applications where accuracy matters — legal, medical, financial — vanilla LLMs are a liability. RAG changes this equation.</p>
+          <h4>The Architecture That Works</h4>
+          <p>After building RAG systems for enterprise clients, I've converged on a hybrid retrieval architecture: dense embeddings for semantic similarity, sparse BM25 for keyword precision, and a re-ranking layer that combines both signals. This consistently outperforms either approach alone.</p>
+          <p>But retrieval is only half the battle. The generation layer needs source attribution — every claim linked to the document it came from. It needs confidence calibration — the system should say "I don't know" rather than hallucinate. And it needs access control — not every user should see every document. Build these from day one, not as afterthoughts.</p>
+        </div>
+        <button class="blog-entry__toggle" aria-label="Expand">
+          <span>Read full article</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+      </article>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Anish Bhat. Crafted with intention.</p>
+  </footer>
+
+  <script>
+    // Blog expand/collapse
+    document.querySelectorAll('[data-blog-expandable]').forEach(entry => {
+      const toggle = entry.querySelector('.blog-entry__toggle');
+      if (!toggle) return;
+      toggle.addEventListener('click', () => {
+        entry.classList.toggle('expanded');
+        const span = toggle.querySelector('span');
+        span.textContent = entry.classList.contains('expanded') ? 'Collapse' : 'Read full article';
+      });
+    });
+  </script>
+</body>
+</html>
