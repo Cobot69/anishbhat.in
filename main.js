@@ -2,6 +2,8 @@
    ANISH BHAT — AI ENGINEER PORTFOLIO
    Premium Interactions v2
    ═══════════════════════════════════════════════════════════════════ */
+import { inject } from '@vercel/analytics';
+inject();
 
 // ─── DOM REFERENCES ───
 const nav = document.getElementById('main-nav');
